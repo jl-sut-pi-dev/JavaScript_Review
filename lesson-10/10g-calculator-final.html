@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../styles/10g-calculator-final.css" />
+  </head>
+  <body>
+    <p class="calculationStr"></p>
+
+    <div>
+      <button class="number-button" onclick="updateCalculationStr('1')">
+        1
+      </button>
+      <button class="number-button" onclick="updateCalculationStr('2')">
+        2
+      </button>
+      <button class="number-button" onclick="updateCalculationStr('3')">
+        3
+      </button>
+      <button class="operator-button" onclick="updateCalculationStr('+')">
+        +
+      </button>
+    </div>
+
+    <div>
+      <button class="number-button" onclick="updateCalculationStr('4')">
+        4
+      </button>
+      <button class="number-button" onclick="updateCalculationStr('5')">
+        5
+      </button>
+      <button class="number-button" onclick="updateCalculationStr('6')">
+        6
+      </button>
+      <button class="operator-button" onclick="updateCalculationStr('-')">
+        -
+      </button>
+    </div>
+    <div>
+      <button class="number-button" onclick="updateCalculationStr('7')">
+        7
+      </button>
+      <button class="number-button" onclick="updateCalculationStr('8')">
+        8
+      </button>
+      <button class="number-button" onclick="updateCalculationStr('9')">
+        9
+      </button>
+      <button class="operator-button" onclick="updateCalculationStr('*')">
+        *
+      </button>
+    </div>
+
+    <div>
+      <button class="number-button" onclick="updateCalculationStr('0')">
+        0
+      </button>
+      <button class="number-button" onclick="updateCalculationStr('.')">
+        .
+      </button>
+      <button
+        class="number-button"
+        onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation= eval(calculation);
+     
+      showCalculationStr();
+      localStorage.setItem(`calculationStr`,calculation);
+
+      "
+      >
+        =
+      </button>
+      <button class="operator-button" onclick="updateCalculationStr('/')">
+        /
+      </button>
+    </div>
+
+    <button
+      class="clear-button"
+      onclick="
+        calculation='';
+      localStorage.setItem('calculationStr',calculation);
+      showCalculationStr();
+      "
+    >
+      clear
+    </button>
+
+    <script src="../script/10g-calculator-final.js"></script>
+  </body>
+</html>
