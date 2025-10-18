@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolean</title>
+  </head>
+  <body>
+    <button
+      onclick="
+    
+      let age = Math.random() * 100;
+      const holiday = false;
+
+      // if (age <= 6) {
+      //   console.log(age+' :Discount');
+      // } else if (age > 64) {
+      //   console.log(age+ ' :Discount');
+      // } else {
+      //   console.log(age+' No Discount');
+      // }
+
+      if((age<=6 || age>= 65)&&!holiday){
+        console.log( age+ ': Discount')
+      }else{
+        console.log(age+ ': No Discount')
+      }
+      
+      "
+    >
+      check discount
+    </button>
+    <script>
+      // let hour = Math.random() * 10;
+      let hour = 6;
+      if (hour > 5 && hour < 12) {
+        console.log("Morning");
+      } else if (hour > 11 && hour < 18) {
+        console.log("Good evening");
+      } else {
+        console.log("Good night");
+      }
+    </script>
+  </body>
+</html>

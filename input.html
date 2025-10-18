@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      placeholder="Name"
+      class="name-input"
+      onkeydown="enterFun(event)"
+    />
+    <button
+      class="submit-btn"
+      onclick="
+      showName();
+    "
+    >
+      Sumbit
+    </button>
+    <p class="show-name"></p>
+    <script>
+      function enterFun(event) {
+        if (event.key === "Enter") {
+          showName();
+        }
+      }
+      function showName() {
+        const input = document.querySelector(".name-input");
+        document.querySelector(
+          `.show-name`
+        ).innerHTML = `Your name is : ${input.value}`;
+      }
+    </script>
+  </body>
+</html>

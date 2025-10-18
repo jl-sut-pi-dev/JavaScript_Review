@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div>
+      <p class="calculationStr"></p>
+      <button onclick="updateCalculationStr('1')">1</button>
+      <button onclick="updateCalculationStr('2')">2</button>
+      <button onclick="updateCalculationStr('3')">3</button>
+      <button onclick="updateCalculationStr('+')">+</button>
+    </div>
+    <div>
+      <button onclick="updateCalculationStr('4')">4</button>
+      <button onclick="updateCalculationStr('5')">5</button>
+      <button onclick="updateCalculationStr('6')">6</button>
+      <button onclick="updateCalculationStr('-')">-</button>
+    </div>
+    <div>
+      <button onclick="updateCalculationStr('7')">7</button>
+      <button onclick="updateCalculationStr('8')">8</button>
+      <button onclick="updateCalculationStr('9')">9</button>
+      <button onclick="updateCalculationStr('*')">*</button>
+    </div>
+    <div>
+      <button onclick="updateCalculationStr('0')">0</button>
+      <button onclick="updateCalculationStr('.')">.</button>
+      <button
+        onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation= eval(calculation);
+     
+      showCalculationStr();
+
+      "
+      >
+        =
+      </button>
+      <button onclick="updateCalculationStr('/')">/</button>
+    </div>
+    <button
+      onclick="
+      calculation='';
+    localStorage.setItem('calculationStr',calculation);
+    showCalculationStr();
+    "
+    >
+      clear
+    </button>
+    <script>
+      let calculation = localStorage.getItem("calculationStr") || "";
+
+      function showCalculationStr() {
+        document.querySelector(".calculationStr").innerHTML = calculation;
+      }
+      showCalculationStr();
+
+      function updateCalculationStr(value) {
+        calculation += value;
+        showCalculationStr();
+        localStorage.setItem("calculationStr", JSON.stringify(calculation));
+      }
+    </script>
+  </body>
+</html>

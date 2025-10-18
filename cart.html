@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+  </head>
+  <body>
+    <button class="show-quantity">show Quantity</button>
+    <button class="add-to-cart" onclick="updateCartQuantity(1)">
+      Add to Cart
+    </button>
+    <button class="cart+2" onclick="updateCartQuantity(2)">+2</button>
+    <button class="cart+3" onclick="updateCartQuantity(3)">+3</button>
+    <button class="cart+4" onclick="updateCartQuantity(4)">+4</button>
+    <button class="cart+5" onclick="updateCartQuantity(5)">+5</button>
+    <button class="remove-from-cart" onclick="removeFromCart()">
+      Remove from cart
+    </button>
+    <button class="cart-2" onclick="updateCartQuantity(-2)">-2</button>
+    <button class="cart-3" onclick="updateCartQuantity(-3)">-3</button>
+    <p class="cart-quantity"></p>
+    <script>
+      const text_quantity = document.querySelector(".cart-quantity");
+      let cart_quantity = 0;
+
+      // function updateCartQuantity() {
+      //   text_quantity.innerHTML = `Cart Quantity : ${cart_quantity}`;
+      // }
+      // updateCartQuantity();
+
+      function showCart() {
+        text_quantity.innerHTML = `Cart Quantity: ${cart_quantity}`;
+      }
+
+      showCart();
+      function updateCartQuantity(change) {
+        if (cart_quantity + change > 10) {
+          alert("the cart is full");
+          return;
+        }
+        if (cart_quantity + change < 0) {
+          alert("not enough item in the cart");
+          return;
+        }
+        cart_quantity += change;
+        showCart();
+      }
+    </script>
+  </body>
+</html>
