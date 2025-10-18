@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array loop</title>
+  </head>
+  <body>
+    <!-- <div></div> -->
+    <script>
+      // const nums = [10, 20, 30];
+      // const strings = ["hi , how are you?", "i am fine", "good morning"];
+      // console.log(nums);
+      // nums[nums.length - 1] = 99;
+      // console.log(nums);
+
+      //Last value array
+      // function lastValue(arr) {
+      //   return arr[arr.length - 1];
+      // }
+      // console.log(lastValue(nums));
+      // console.log(lastValue(strings));
+
+      // const newArray = [];
+      // let hmtlCollection = "";
+      // for (let i = 0; i < nums.length; i++) {
+      //   // newArray.push(nums[i] * 2);
+      //   hmtlCollection += `<p>${nums[i]}</p>`;
+      // }
+      // console.log(newArray);
+
+      // array swap
+      // const numbers = [1, 2, 3, 4, 5];
+      // console.log(numbers);
+      // function arraySwap(arr) {
+      //   let temp = arr[0];
+      //   arr[0] = arr[arr.length - 1];
+      //   arr[arr.length - 1] = temp;
+      //   console.log("first value", arr[0]);
+      //   console.log("last value ", arr[arr.length - 1]);
+      // }
+      // arraySwap(numbers);
+      // console.log(numbers);
+
+      // Array are Reference
+      const array1 = [1, 2, 4, 6];
+      const array2 = array1.slice();
+      array2.push(5);
+      console.log(array1);
+      console.log(array2);
+
+      // Array destructuring
+      const [firstValue, SecondValue] = [1, 2, 3, 4];
+      // console.log(firstValue);
+      // console.log(SecondValue);
+
+      // loop break and continue
+      // break when we wanna stop in a certain number
+
+      // for (i = 1; i <= 10; i++) {
+      //   if (i % 3 === 0) {
+      //     continue;
+      //   }
+      //   console.log(i);
+      //   if (i === 8) {
+      //     break;
+      //   }
+      // }
+      let j = 1;
+
+      while (j <= 10) {
+        if (j % 3 === 0) {
+          j++;
+          continue;
+        }
+        console.log(j);
+        j++;
+      }
+    </script>
+  </body>
+</html>
