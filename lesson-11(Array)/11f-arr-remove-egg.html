@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Remove Egg</title>
+  </head>
+  <body>
+    <script>
+      const food = ["beef", "rice", "ham", "egg", "egg", "apple0", "egg"];
+      console.log(food);
+      function removeSomething(array, value) {
+        const toReverseArray = array.slice();
+        const reverseArray = toReverseArray.reverse();
+        const result = [];
+        let count = 0;
+        for (let i = 0; i < reverseArray.length; i++) {
+          if (reverseArray[i] === value) {
+            count++;
+            if (count < 3) {
+              continue;
+            }
+          }
+          result.push(reverseArray[i]);
+        }
+        return result.reverse();
+      }
+      console.log(removeSomething(food, "egg"));
+      console.log(food);
+
+      function onlyTheFirst2(array, value) {}
+    </script>
+  </body>
+</html>
