@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    <button class="js-button" onclick="">click</button>
+    <script>
+      const buttonElement = document.querySelector(".js-button");
+      const eventListener = () => {
+        console.log("clicked");
+      };
+      buttonElement.addEventListener("click", eventListener);
+
+      buttonElement.addEventListener("click", () => {
+        console.log("clicked2");
+      });
+      buttonElement.removeEventListener("click", eventListener);
+
+      // const function1 = function () {
+      //   console.log("hello");
+      // };
+
+      // function1();
+      // // functions are vaues;
+      // const num = 2;
+      // const fun1 = function () {
+      //   console.log("hello two");
+      // };
+      // fun1();
+      // const fun2 = function (param) {
+      //   param();
+      // };
+      // fun2(function () {
+      //   console.log("hello world");
+      // });
+
+      // setTimeout(() => {
+      //   console.log("hi hoeelo dfadfa");
+      // }, 5000);
+      // setInterval(() => {
+      //   console.log("interval");
+      // }, 3000);
+
+      // ["make dinner", "wash dishes", "watch youtube"].forEach(
+      //   (value, index) => {
+      //     console.log(value, index);
+      //   }
+      // );
+      // const obj2 = {
+      //   fun1: () => {},
+      //   fun2() {},
+      // };
+
+      console.log(
+        [1, 2, -3, 4].filter((value, index) => {
+          return value >= 0;
+        })
+      );
+    </script>
+  </body>
+</html>

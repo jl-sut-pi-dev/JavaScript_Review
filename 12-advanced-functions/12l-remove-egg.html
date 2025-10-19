@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrow fun</title>
+  </head>
+  <body>
+    <script>
+      function removeEgg(arr) {
+        let counter = 0;
+        const result = arr.filter((value) => {
+          if (counter > 3) {
+            return true;
+          }
+          counter++;
+          return value !== "egg";
+        });
+        return result;
+      }
+      console.log(
+        removeEgg(["egg", "egg", "apple", "orange", "egg", "banana", "egg"])
+      );
+    </script>
+  </body>
+</html>

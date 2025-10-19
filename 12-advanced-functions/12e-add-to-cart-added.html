@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>button text change (setTimeout)</title>
+  </head>
+  <body>
+    <button class="start-btn" onclick="textChange()">add to cart</button>
+    <p class="show-added"></p>
+    <script>
+      const textChange = function () {
+        const startButton = document.querySelector(".start-btn");
+        const showAdded = document.querySelector(".show-added");
+        showAdded.innerHTML = "Added";
+        setTimeout(() => {
+          showAdded.innerHTML = "";
+        }, 2000);
+      };
+    </script>
+  </body>
+</html>

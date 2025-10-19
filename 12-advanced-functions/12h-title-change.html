@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+  </head>
+  <body>
+    <button
+      class="start-btn"
+      onclick="
+      message++
+      if(message>0)
+      displayNotification()"
+    >
+      add
+    </button>
+    <button
+      class="start-btn"
+      onclick="
+    if(message>0){
+      message--;
+      if(message===0){
+
+        removeNotification();
+      }
+    }
+    "
+    >
+      remove
+    </button>
+    <p class="show-added"></p>
+    <script>
+      // let timeoutId;
+      let message = 0;
+      let isDisplay;
+
+      let intervalId;
+      if (message > 0) {
+        displayNotification();
+      }
+      console.log(message);
+      function displayNotification() {
+        if (isDisplay) {
+          return;
+        }
+        isDisplay = true;
+        intervalId = setInterval(() => {
+          if (document.title === "App") {
+            document.title = `(${message}) new Emails`;
+          } else {
+            document.title = "App";
+          }
+        }, 1000);
+      }
+      function removeNotification() {
+        document.title = "App";
+        clearInterval(intervalId);
+        isDisplay = false;
+      }
+    </script>
+  </body>
+</html>
